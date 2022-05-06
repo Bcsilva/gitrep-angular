@@ -1,27 +1,40 @@
-# GitrepAngular
+# Basic Git Repo fetcher
+Carrega informações primárias de algum determinado repositório do github via Angular-Cli.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+Este projeto foi feito com [Angular CLI](https://github.com/angular/angular-cli) versão 13.3.5.
 
-## Development server
+## O que é?
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Single page aplication que exibe resultados primários de repositórios do Github, próprios ou relativos, de acordo com o nome do usuário. Os resultados podem ser filtrados de duas formas:
+- Se você clica no checkbox "Apenas repositórios privados?" os resultados mostrarão os repositórios privados criados pelo usuário.
+- Caso contrário, os resultados mostrados serão os repositórios alheios marcados como estrela pelo usuário, os relativos
 
-## Code scaffolding
+## Como instalar e utilizar?
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Primeiramente, faça um git clone de https://github.com/Bcsilva/gitrep-react
 
-## Build
+> git clone https://github.com/Bcsilva/gitrep-angular.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Depois, instale as dependências:
 
-## Running unit tests
+> npm install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Vá ao diretório
 
-## Running end-to-end tests
+> cd gitrep-angular
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+E execute o projeto
 
-## Further help
+> ng serve
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Se tudo der certo, ele rodará no seguinte link `http://localhost:4200/`
+
+Para compilar o projeto, rode o comando `ng build`. O material compilado estará localizado no diretório `dist/`.
+
+## Como funciona?
+
+A aplicação utiliza os conceitos básicos de Angular, focada em um componente e módulos singulares, biblioteca padrão de formulários e dependências externas: Bootstrap e Axios.
+
+Todo a parte lógica se encontra em app.component.ts, com as funções utilizadas pelo formulário.
+
+Em app.component.html, temos o formulário em HTML com campos mapeados em ngModel e também os repetidores de informações para mostrar os resultados de busca.
